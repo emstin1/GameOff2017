@@ -25,6 +25,6 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -131069, 0, 131075, 0, 393219, 1, 393223, 1, 393227, 1, 393231, 1 )
+tile_data = IntArray( 393216, 6, 393220, 6, 393224, 6, 393228, 5, 393232, 7, 393236, 7, 393244, 7 )
 
 
