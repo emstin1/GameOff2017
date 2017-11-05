@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://guy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://terrain_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://meteor_small.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,6 +26,18 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -131072, 0, 131072, 0, 131124, 0, 393216, 6, 393220, 6, 393224, 6, 393228, 5, 393232, 7, 393236, 7, 393240, 3, 393244, 6, 393248, 6, 393252, 6, 393256, 0, 393268, 0, 655400, 6, 655404, 6, 655408, 6 )
+tile_data = IntArray( -393216, 7, -393212, 7, -393208, 4, -393204, 1, -393200, 1, -393196, 1, -393192, 1, -393188, 1, -393184, 1, -393180, 1, -393176, 1, -393172, 1, -393168, 1, -393164, 0, -131072, 0, -131020, 0, 131072, 0, 131124, 0, 393216, 6, 393220, 6, 393224, 6, 393228, 5, 393232, 7, 393236, 7, 393240, 3, 393244, 6, 393248, 6, 393252, 6, 393256, 0, 393268, 0, 655400, 6, 655404, 6, 655408, 6 )
+
+[node name="meteor_small1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1445.72, 561.735 )
+
+[node name="meteor_small3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2029.41, 315.629 )
+
+[node name="meteor_small2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2555.4, 316.881 )
 
 

@@ -4,7 +4,8 @@ extends Node2D
 var velocity  = Vector2()
 var current_spd = 0
 var facing = "right"
-var can_jump = true
+var can_jump = false
+var health = 3
 
 #constants
 const MAX_VEL = 500
@@ -48,6 +49,8 @@ func _fixed_process(delta):
 		var motion = n.slide(velocity * delta)
 		velocity = n.slide(velocity)
 		move(motion)
+	if health <= 0:
+		get_tree().quit()
 
 func _ready():
 	set_fixed_process(true)
