@@ -6,10 +6,11 @@ var current_spd = 0
 var facing = "right"
 var can_jump = false
 var health = 3
+onready var sprite = get_node("Sprite")
 
 #constants
 const MAX_VEL = 500
-const MV_LAG  = 50
+const MV_LAG  = 100
 const GRAVITY = 1000
 const JMP     = 500
 
@@ -21,11 +22,15 @@ func _fixed_process(delta):
 	# the movement code below gives us a bit of a lag effect
 	# when chaning directions or starting from a dead stop.
 	if (Input.is_action_pressed("player_left")):
+		if facing == "right":
+			sprite.set_flip_h(true)
 		facing = "left"
 		if not current_spd == -MAX_VEL:
 			current_spd -= MV_LAG
 		velocity.x = current_spd
 	elif (Input.is_action_pressed("player_right")):
+		if facing == "left":
+			sprite.set_flip_h(false)
 		facing = "right"
 		if not current_spd == MAX_VEL:
 			current_spd += MV_LAG
@@ -36,11 +41,16 @@ func _fixed_process(delta):
 				current_spd += MV_LAG
 			elif current_spd > 0:
 				current_spd -= MV_LAG
-		velocity.x = 0
+		velocity.x = current_spd
 	if (Input.is_action_pressed("player_jump")) and (can_jump):
 		can_jump = false
 		velocity.y = -JMP
-
+	
+	if (Input.is_action_pressed("player_crouch")):
+		sprite.set_frame(1)
+	else:
+		sprite.set_frame(0)
+		
 	move(velocity * delta)
 	if (is_colliding()):
 		if (not Input.is_action_pressed("player_jump")) and (not can_jump):
