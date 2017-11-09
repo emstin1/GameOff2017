@@ -30,6 +30,6 @@ transform/pos = Vector2( 497.447, 278.637 )
 
 [node name="meteor_small" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1233.39, 336.644 )
+transform/pos = Vector2( 899.444, 240.881 )
 
 
