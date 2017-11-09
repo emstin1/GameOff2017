@@ -7,15 +7,18 @@ var facing = "right"
 var can_jump = false
 var health = 3
 onready var sprite = get_node("Sprite")
+onready var collision_shape_id = get_node("CollisionPolygon2D").get_collision_object_shape_index()
+
 
 #constants
 const MAX_VEL = 500
 const MV_LAG  = 100
-const GRAVITY = 1000
+#finely tuned.  pls no touch
+const GRAVITY = 2000
 const JMP     = 500
 
 func gravity(_delta):
-	velocity.y += _delta * GRAVITY
+	velocity.y += _delta * GRAVITY 
 
 func _fixed_process(delta):
 	gravity(delta)
@@ -48,6 +51,7 @@ func _fixed_process(delta):
 	
 	if (Input.is_action_pressed("player_crouch")):
 		sprite.set_frame(1)
+		print(get_shape_transform(collision_shape_id))
 	else:
 		sprite.set_frame(0)
 		

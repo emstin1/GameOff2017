@@ -1,20 +1,15 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://guy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://terrain_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://good_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://guy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://meteor_small.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 497.447, 278.637 )
-
 [node name="TileMap" type="TileMap" parent="."]
 
-transform/pos = Vector2( -234.024, -11.3604 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell/size = Vector2( 64, 64 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -27,18 +22,14 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( -393216, 7, -393212, 7, -393208, 4, -393204, 1, -393200, 1, -393196, 1, -393192, 1, -393188, 1, -393184, 1, -393180, 1, -393176, 1, -393172, 1, -393168, 1, -393164, 0, -131072, 0, -131020, 0, 131072, 0, 131124, 0, 393216, 6, 393220, 6, 393224, 6, 393228, 5, 393232, 7, 393236, 7, 393240, 3, 393244, 6, 393248, 6, 393252, 6, 393256, 0, 393268, 0, 655400, 6, 655404, 0, 655408, 3, 917512, 3, 917516, 6, 917520, 6, 917524, 2, 917528, 7, 917532, 7, 917536, 7, 917540, 7, 917544, 7, 917548, 0, 917552, 0, 1179656, 0, 1179669, 7, 1179673, 7, 1179677, 7, 1179681, 7, 1179688, 7, 1179692, 7, 1179696, 0, 1441800, 5, 1441805, 7, 1441809, 7, 1441813, 0, 1441829, 0, 1441832, 0 )
+tile_data = IntArray( 5, 4, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 11, 1, 12, 1, 13, 6, 65541, 6, 65549, 1, 65550, 1, 65551, 1, 65552, 1, 65553, 1, 65554, 1, 65555, 1, 65556, 1, 65557, 1, 65558, 5, 131077, 6, 131094, 7, 196613, 6, 196630, 7, 262149, 6, 262164, 7, 262165, 1, 262166, 1, 327685, 2, 327686, 0, 327687, 0, 327688, 0, 327689, 0, 327700, 7, 393225, 7, 393232, 7, 393233, 1, 393234, 1, 393235, 1, 393236, 1, 458761, 7, 458768, 7, 524297, 7, 524298, 0, 524299, 0, 524300, 0, 524301, 0, 524302, 0, 524303, 0, 524304, 3 )
 
-[node name="meteor_small1" parent="." instance=ExtResource( 3 )]
+[node name="player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 1377.56, 277.725 )
+transform/pos = Vector2( 497.447, 278.637 )
 
-[node name="meteor_small2" parent="." instance=ExtResource( 3 )]
+[node name="meteor_small" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1434.36, 139.129 )
-
-[node name="meteor_small3" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 1216.24, 473.124 )
+transform/pos = Vector2( 1233.39, 336.644 )
 
 
