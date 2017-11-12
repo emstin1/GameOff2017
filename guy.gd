@@ -6,10 +6,13 @@ var current_spd = 0
 var facing = "right"
 var can_jump = false
 var health = 3
-onready var sprite = get_node("Sprite")
-onready var collision_shape_id = get_node("CollisionPolygon2D").get_collision_object_shape_index()
-var col_scale = Vector2(1, -0.5)
+
+onready var standing_collision = get_node("StandingCollisionPoly")
+onready var crouching_collision = get_node("CrouchingCollisionPoly")
+onready var sprite = get_node("Spr")
+onready var collision_shape_id = standing_collision.get_collision_object_shape_index()
 onready var standing_collision_transform = get_shape_transform(collision_shape_id)
+var col_xform = Vector2(1,-0.5)
 
 #constants
 const MAX_VEL = 500
@@ -52,10 +55,12 @@ func _fixed_process(delta):
 	
 	if (Input.is_action_pressed("player_crouch")):
 		sprite.set_frame(1)
-		set_shape_transform(collision_shape_id, standing_collision_transform.scaled(col_scale))
+		standing_collision.set_trigger(true)
+		crouching_collision.set_trigger(false)
 	else:
-		set_shape_transform(collision_shape_id, standing_collision_transform)
 		sprite.set_frame(0)
+		standing_collision.set_trigger(false)
+		crouching_collision.set_trigger(true)
 		
 	move(velocity * delta)
 	if (is_colliding()):

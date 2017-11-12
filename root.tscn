@@ -26,10 +26,15 @@ tile_data = IntArray( 5, 4, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 11, 1, 12, 1, 13, 6, 
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 497.447, 278.637 )
+transform/pos = Vector2( 591.447, 320.637 )
+
+[node name="CrouchingCollisionPoly" parent="player"]
+
+visibility/visible = true
 
 [node name="meteor_small" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 899.444, 240.881 )
+transform/pos = Vector2( 776.156, 216.363 )
 
 
+[editable path="player"]
