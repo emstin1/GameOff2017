@@ -26,15 +26,34 @@ tile_data = IntArray( 5, 4, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 11, 1, 12, 1, 13, 6, 
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 591.447, 320.637 )
-
-[node name="CrouchingCollisionPoly" parent="player"]
-
-visibility/visible = true
+transform/pos = Vector2( 376.139, 318.586 )
 
 [node name="meteor_small" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 776.156, 216.363 )
+transform/pos = Vector2( 1057.75, 204.119 )
+
+[node name="meteor_small1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 932.599, 395.932 )
+
+[node name="meteor_small4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1163.86, 110.253 )
+
+[node name="meteor_small5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 799.282, 134.74 )
+
+[node name="meteor_small6" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1399.21, 194.596 )
+
+[node name="meteor_small2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1180.19, 321.111 )
+
+[node name="meteor_small3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1298.54, 155.146 )
 
 
-[editable path="player"]

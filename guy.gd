@@ -5,7 +5,7 @@ var velocity  = Vector2()
 var current_spd = 0
 var facing = "right"
 var can_jump = false
-var health = 3
+var health = 30
 
 onready var standing_collision = get_node("StandingCollisionPoly")
 onready var crouching_collision = get_node("CrouchingCollisionPoly")

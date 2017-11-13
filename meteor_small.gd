@@ -17,5 +17,5 @@ func _fixed_process(delta):
 		if collision:
 			if collision.get_name() == "player":
 				get_parent().get_node("player").health -= 1
-		queue_free()
+		#queue_free()
 	move(velocity * delta)
